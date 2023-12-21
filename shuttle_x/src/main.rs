@@ -8,7 +8,8 @@ use shuttle_actix_web::ShuttleActixWeb;
 async fn main() -> ShuttleActixWeb<impl FnOnce(&mut ServiceConfig) + Send + Clone + 'static> {
     let config = move |cfg: &mut ServiceConfig| {
         cfg.service(hello_world);
-        cfg.service(day_1::calculate_xor_pow3)
+        cfg.service(day_1::calculate_xor_pow3);
+        cfg.service(day_1::multiple_xor_pow3);
 ;
     };
 
